@@ -45,12 +45,11 @@ function App() {
   const [disabled, setDisabled] = useState(initialDisabled)
 
   // Helper Functions
-// - [ ] Craft a `POST` request using `axios` that sends your form data to the following endpoint: _`https://reqres.in/api/users`_
-// - [ ] Verify using a `console.log()` that you are receiving a successful response back
   const postNewUser = newUser => {
     axios.post('https://reqres.in/api/users', newUser)
       .then (res => {
         setUsers([res.data, ...users])
+        console.log('UPDATE TO GET CORRECT SUCCESS RESPONSE', res)
       })
       .catch(err => {
         console.log(err)
@@ -108,6 +107,8 @@ function App() {
         errors={formErrors}
       />
       <pre>
+        <br></br>
+        <h1>Existing User Log</h1>
         {JSON.stringify(users)}
       </pre>
     </div>
