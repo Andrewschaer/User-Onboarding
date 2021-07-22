@@ -25,6 +25,28 @@ export default function Form(props) {
         <form className='form container' onSubmit={onSubmit}>
             <h2>Add a User</h2>
             <div>
+                <label>Username&nbsp;
+                    <input
+                        value={values.username}
+                        onChange={onChange}
+                        name='username'
+                        type='text'
+                    />
+                    {errors.username}
+                </label>
+            </div>
+            <div>
+                <label>Password&nbsp;
+                    <input
+                        value={values.password}
+                        onChange={onChange}
+                        name='password'
+                        type='password'
+                    />
+                    {errors.password}
+                </label>
+            </div>
+            <div>
                 <label>Full Name&nbsp;
                     <input
                         value={values.name}
@@ -85,34 +107,18 @@ export default function Form(props) {
                     {errors.profilePic}
                 </label>
             </div>
+            <br></br>
             <div>
-                <label>Username&nbsp;
-                    <input
-                        value={values.username}
-                        onChange={onChange}
-                        name='username'
-                        type='text'
-                    />
-                    {errors.username}
-                </label>
+                <input
+                    value={values.tos}
+                    onChange={onChange}
+                    name='tos'
+                    type='checkbox'
+                />
+                {errors.tos}
+                <label>I Agree to the Terms of Service&nbsp;</label>
             </div>
-            <div>
-                <label>Password&nbsp;
-                    <input
-                        value={values.password}
-                        onChange={onChange}
-                        name='password'
-                        type='password'
-                    />
-                    {errors.password}
-                </label>
-            </div>
-
-            
-                
-                
-
-
+            <br></br>
             <div>
                 <button disabled={disabled}>Submit</button>
             </div>

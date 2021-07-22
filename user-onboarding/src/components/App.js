@@ -84,7 +84,7 @@ function App() {
       password: formValues.password.trim(),
       userRole: formValues.userRole.trim(),
       birthday: formValues.birthday.trim(),
-      tos: formValues.tos.trim(),
+      tos: formValues.tos,
       profilePic: formValues.profilePic.trim(),
     }
     postNewUser(newUser)
